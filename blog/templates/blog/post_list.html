@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Dustin's blog</title>
-    </head>
-    <body>
-        <header>
-            <h1><a href="/">Dustin's Blog</a></h1>
-        </header>
-        <p>Hi there!</p>
-        <p>It works!</p>
-        <article>
-            <time>published: 04.13.2023, 06:18</time>
-            <h2><a href="">My first post</a></h2>
-            <p>This is my first web devlopment</p>
-        </article>
+{% extends 'blog/base.html' %}
 
-        <article>
-            <time>published: 04.3.2023, 06:20</time>
-            <h2><a href="">My second post</a></h2>
-            <p>This is my second article for my web</p>
+{% block content %}
+    {% for post in posts %}
+        <article class="post">
+            <time class="date">
+                {{ post.published_date }}
+            </time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
-    </body>
-</html>
+    {% endfor %}
+{% endblock%}
