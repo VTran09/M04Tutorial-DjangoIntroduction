@@ -76,3 +76,11 @@ h4 {
     color: #FFFFFF;
     background-color: #C25100;
 }
+
+.actions {
+    margin: 1em;
+}
+
+.comment {
+    margin: 20px 0px 20px 0px;
+}
